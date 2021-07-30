@@ -1,0 +1,49 @@
+﻿@model BIKE_SHOWROOM_MANAGEMENT.Models.BikeViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1> Details</h1>
+
+<div>
+    <h4>Bike Detailsl</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BikeId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BikeId)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BikeName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BikeName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Company)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Milage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Milage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.BikeId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

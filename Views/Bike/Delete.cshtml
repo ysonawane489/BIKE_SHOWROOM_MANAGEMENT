@@ -1,0 +1,62 @@
+﻿@model BIKE_SHOWROOM_MANAGEMENT.Models.BikeViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<html>
+<body>
+    <h1>Delete</h1>
+
+    <div>
+        <h4>BikeViewModel</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BikeId)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BikeId)
+            </dd>
+
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BikeName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BikeName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Company)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Company)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Milage)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Milage)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+        </dl>
+        
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="BikeId" />
+            <button onclick="myFunction()">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </button>|
+            <a asp-action="Index">Back to List</a>
+            <script> 
+                function myFunction() {
+     alert(" Are you sure want to delete details");
+                }
+            </script>
+        </form>
+    </div>
+</body>
+</html>

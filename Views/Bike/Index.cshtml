@@ -1,0 +1,68 @@
+﻿@model IEnumerable<BIKE_SHOWROOM_MANAGEMENT.Models.BikeViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1><I><B>BIKE DETAILS</B></I></h1>
+ <table style="background-color:pink " height="60px" width="1000px">
+     <tr>
+         <th>
+             <a asp-action="Create"><u>Create New Bike Details</u></a>
+         </th>
+         <th>  </th>
+         <th>  </th>
+         <th>
+             <a asp-action="HomePage"><u>Home Page</u></a>
+         </th>
+     </tr>
+</table>
+<table class="table" wdth="100" style="background-color:aquamarine">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BikeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BikeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BikeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BikeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Milage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BikeId"><u>Edit</u></a> |
+                    <a asp-action="Details" asp-route-id="@item.BikeId"><u>Details</u></a> |
+                    <a asp-action="Delete" asp-route-id="@item.BikeId"><u>Delete</u></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
